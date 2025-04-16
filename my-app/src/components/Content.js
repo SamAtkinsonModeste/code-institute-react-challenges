@@ -22,7 +22,10 @@ export class Content extends Component {
           savedPosts.map((post) => {
             return(
               <div className={css.SearchItem}>
-                Individual Post
+                <p>{post.title}</p>
+                <p>{post.name}</p>
+                <img src={post.image} alt={post.title}></img>
+                <p>{post.description}</p>
               </div>
             )
           })
