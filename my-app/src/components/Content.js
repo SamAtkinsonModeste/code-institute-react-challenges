@@ -19,7 +19,7 @@ export class Content extends Component {
         <div className={CSS.SearchResults}>
           savedPosts.map((post) => ({
 
-          })
+          }))
         </div>
       </div>
     );
