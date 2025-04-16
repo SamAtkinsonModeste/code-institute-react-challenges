@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { savedPosts } from "../post.json";
-import css from "./Content.module.css";
+import postsData from "../posts.json";
+import css from "./css/Content.module.css";
 
 export class Content extends Component {
   constructor(props) {
@@ -11,15 +11,22 @@ export class Content extends Component {
     };
   }
   render() {
+    const savedPosts = postsData.savedPosts;
     return (
       <div>
         <div className={CSS.TitleBar}>
           <h1>My Photos</h1>
         </div>
         <div className={CSS.SearchResults}>
-          savedPosts.map((post) => ({
-
-          }))
+         {
+          savedPosts.map((post) => {
+            return(
+              <div className={css.SearchItem}>
+                Individual Post
+              </div>
+            )
+          })
+         }
         </div>
       </div>
     );
