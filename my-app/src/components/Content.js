@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PostItem from "./PostItem";
 import postsData from "../posts.json";
 import css from "./css/Content.module.css";
 
@@ -14,22 +15,11 @@ export class Content extends Component {
     const savedPosts = postsData.savedPosts;
     return (
       <div>
-        <div className={CSS.TitleBar}>
+        <div className={css.TitleBar}>
           <h1>My Photos</h1>
         </div>
-        <div className={CSS.SearchResults}>
-         {
-          savedPosts.map((post) => {
-            return(
-              <div className={css.SearchItem}>
-                <p>{post.title}</p>
-                <p>{post.name}</p>
-                <img src={post.image} alt={post.title}></img>
-                <p>{post.description}</p>
-              </div>
-            )
-          })
-         }
+        <div className={css.SearchResults}>
+         <PostItem savedPosts={savedPosts} />
         </div>
       </div>
     );
@@ -37,3 +27,4 @@ export class Content extends Component {
 }
 
 export default Content;
+
